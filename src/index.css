@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+
+
+
+
+@theme {
+ 
+  --color-white-main:#FFFFFF;
+  --color-purple-main:#4E2FD2;
+  --color-purple-secondary:#EDF4FF;
+  --color-black-1F-headerAndBorder:#1F1F1F;
+  --color-black-10-header:#0B0D10;
+  --color-gray-48-sub-header:#484848;
+  --color-prodcuts-header:#A8B2BD;
+  --color-discount-text:#6F7882;
+  --color-checkout-des-green:#0AA288;
+  --color-price-red:#D8392B;
+  
+
+  
+  --spacing-product-border:0.5px 0px 0.5px 0px;
+  --text-10px:10px;
+  --text-18px:18px;
+  --text-12px:12px;
+  --text-22px:22px;
+  --text-24px:24px;
+  --text-header:31.88px;
+  --text-17px:17px;
+  --text-1: 0.25rem;
+  --text-2: 0.5rem;
+  --text-3: 0.75rem;
+  --text-4: 1rem;
+  --text-5: 1.25rem;
+  --text-6: 1.5rem;
+  --text-8: 2rem;
+  --text-10: 2.5rem;
+
+  --spacing-prodcut-padding-y-sm:20px;
+   --spacing-prodcut-padding-x-sm:15px;
+   --spacing-section-padding-t-sm:15px;
+   --spacing-section-gap-sm: 10px
+   
+
+
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+
+
+
+
+  --shadow-card: 0 1px 4px rgb(15 23 42 / 8%);
+
+
+}
+
+
+:root , body{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color:var(--color-white-main);
+  /* font-weight: 500; */
+}
+
+
+h1{
+  font-weight: 700;
+}
+ 
+
+
+
+ 
+
+
+
+.des-color {
+  color:var(--color-black-1F-header)
+}
+
+
+.prodcut-border{
+  border-width: var(--spacing-product-border);
+
+border-style: solid;
+
+border-color: var(--color-black-1F-headerAndBorder);
+
+
+}
+
+.center{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-size-text{
+  font-size: var(--spacing-10px);
+}
+
+.section-content-padding{
+  padding:20px 20px 31px 20px ;
+}
