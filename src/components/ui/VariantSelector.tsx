@@ -1,6 +1,6 @@
-import type { Variant } from '@/features/bundle-builder/types/models';
 import { Tabs, TabsList, TabsTrigger } from './tabs';
 
+type Variant = { id: string; label: string; swatch: string };
 type VariantSelectorProps = { variants: Variant[]; value: string; onChange: (variantId: string) => void };
 
 export function VariantSelector({ variants, value, onChange }: VariantSelectorProps) {

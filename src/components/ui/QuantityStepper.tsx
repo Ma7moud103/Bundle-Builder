@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 type QuantityStepperProps = { value: number; onChange: (value: number) => void; min?: number; className?: string };
 export function QuantityStepper({ value, onChange, min = 0, className }: QuantityStepperProps) {
   return (
-    <div className={cn('inline-flex items-center gap-2', className)}>
+    <div className={cn('inline-flex items-center gap-2 max-w-20', className)}>
       <button
         type="button"
         aria-label="Decrease quantity"
@@ -14,10 +14,15 @@ export function QuantityStepper({ value, onChange, min = 0, className }: Quantit
       >
         <Minus size={12} />
       </button>
-      <span className="min-w-4 text-center text-sm" aria-live="polite">
+      <span className="min-w-4 text-center text-sm " aria-live="polite">
         {value}
       </span>
-      <button type="button" aria-label="Increase quantity" onClick={() => onChange(value + 1)} className="grid size-6 place-items-center rounded bg-muted">
+      <button
+        type="button"
+        aria-label="Increase quantity"
+        onClick={() => onChange(value + 1)}
+        className="grid size-6 place-items-center rounded bg-[#F0F4F7]"
+      >
         <Plus size={12} />
       </button>
     </div>

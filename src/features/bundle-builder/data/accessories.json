@@ -1,0 +1,10 @@
+[
+  {
+    "id": "microsd-256",
+    "image_url": "accessory1",
+
+    "name": "Wyze MicroSD Card (256GB)",
+    "description": "Local storage for your cameras.",
+    "price": 20.98
+  }
+]

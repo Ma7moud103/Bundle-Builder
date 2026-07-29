@@ -1,13 +1,24 @@
+import Steps from './features/bundle-builder/components/Steps';
+import Cart from './features/bundle-builder/components/Cart';
+import { UIProvider } from './contexts/UIContext';
+import { BundleProvider } from './contexts/BundlerContext';
+
 export default function App() {
   return (
-    <main className="">
-      <header className="flex justify-center items-center sm:hidden h-21.25 ">
-        <h1 className="text-header  ">Let's get started!</h1>
-      </header>
-      <section className="grid grid-cols-[minmax(0,1fr)_400px] gap-7  max-[900px]:block">
-        <div>fd</div>
-        <div className="max-[900px]:mt-8 max-[600px]:mt-0">asfd</div>
-      </section>
-    </main>
+    <UIProvider>
+      <BundleProvider>
+        <main className="flex min-h-313 flex-col text-[#17191d]">
+          <header className="flex flex-1 items-center justify-center px-4 py-6 lg:hidden">
+            <h1 className="m-0 text-[31px] font-bold tracking-[-1.2px]">Let&apos;s get started!</h1>
+          </header>
+          <section className="min-h-291.5 w-full lg:grid lg:grid-cols-[minmax(0,758px)_399px] lg:gap-7.5  lg:px-20 lg:py-12">
+            <Steps />
+            <Cart />
+          </section>
+        </main>
+      </BundleProvider>
+    </UIProvider>
   );
 }
+
+1440 - 919;

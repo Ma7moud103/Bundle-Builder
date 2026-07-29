@@ -1,20 +1,27 @@
-# Bundle Builder foundation
+# Bundle Builder
 
-Production-oriented foundation for the Bundle Builder assessment. The Figma UI is intentionally not implemented in this stage.
+React/Vite prototype for the frontend bundle-builder take-home.
 
-## Run
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Foundation decisions
+Production checks:
 
-- Domain models and mock catalog data live under `src/features/bundle-builder`.
-- Zustand persist stores accordion state, active variant per product, and independent quantity per variant.
-- Reusable visual primitives live under `src/components/ui` and use Tailwind utilities only.
-- Design tokens are CSS variables in `src/app/styles/tokens.css` and are exposed through Tailwind v4's `@theme inline` block.
-- `@/*` resolves to `src/*` in both TypeScript and Vite.
+```bash
+npm run build
+npm run lint
+```
 
-Useful checks: `npm run build`, `npm run lint`, and `npm run format:check`.
+## Implementation notes
+
+- Product content is rendered from `src/features/bundle-builder/data/products.json`.
+- Selection state is centralized in `App`, so product-card and review-panel steppers stay synchronized.
+- Variant quantities are tracked independently per product and variant; changing the active variant does not overwrite another variant's quantity.
+- The review panel recalculates selected lines, totals, compare-at totals, and savings from the current selection.
+- “Save my system for later” stores the current configuration in `localStorage` and restores it on the next visit.
+- Step 1 is expanded initially, and the Next button advances the accordion to the following step.
+- Styling uses the existing Tailwind setup and leaves `src/index.css` unchanged.
