@@ -4,6 +4,7 @@ import type { CartItemProps } from './types';
 export function CartItem({
   compareAtPrice,
   image,
+  imageAlt,
   name,
   onDecrement,
   onIncrement,
@@ -12,30 +13,39 @@ export function CartItem({
   variantLabel,
 }: CartItemProps) {
   return (
-    <div className="grid min-h-[60px] grid-cols-12 items-center gap-4">
-      <div className="col-span-2 grid aspect-square place-items-center rounded-[8px] bg-white p-2">
-        <img src={image} alt="" className="rounded-[5px] object-contain" loading="lazy" />
-      </div>
-      <span className="col-span-5 min-w-0 break-words text-sm leading-4 text-black-10-header">
-        {name}
-        {variantLabel ? ` (${variantLabel})` : ''}
-      </span>
-      <QuantityStepper
-        value={quantity}
-        onChange={(nextValue) => {
-          if (nextValue > quantity) {
-            onIncrement();
-            return;
-          }
+    <div className=" min-h-15 flex  justify-between  items-center gap-4 ">
+      <div className="flex justify-between items-center gap-3 ">
+        <span className=" aspect-square size-10.25 place-items-center rounded-md bg-white p-2">
+          {image && <img src={image} alt={imageAlt} className="rounded-[5px] object-contain" loading="lazy" />}
+        </span>
+        <h4 className="min-w-0 wrap-break-word  text-sm leading-4 text-black-10-header">
+          {name}
+          {variantLabel ? ` (${variantLabel})` : ''}
+        </h4>
+        <div className="min-w">
+          <QuantityStepper
+            minsIconStyle={`text-dark`}
+            minusStyle={'bg-white'}
+            plusStyle={'bg-white'}
 
-          if (nextValue < quantity) {
-            onDecrement();
-          }
-        }}
-      />
-      <div className="col-span-2 flex flex-col items-end whitespace-nowrap text-sm leading-[18px]">
+            value={quantity}
+            onChange={(nextValue) => {
+              if (nextValue > quantity) {
+                onIncrement();
+                return;
+              }
+
+              if (nextValue < quantity) {
+                onDecrement();
+              }
+            }}
+          />
+        </div>
+      </div>
+
+      <div className=" flex flex-col items-end whitespace-nowrap text-sm leading-[18px]">
         {compareAtPrice && compareAtPrice > price ? (
-          <del className="text-[#6F7882]">${compareAtPrice.toFixed(2)}</del>
+          <del className="text-discount-text">${compareAtPrice.toFixed(2)}</del>
         ) : null}
         <strong className="text-purple-main">${(price * quantity).toFixed(2)}</strong>
       </div>

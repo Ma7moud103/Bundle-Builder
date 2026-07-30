@@ -1,0 +1,58 @@
+[
+  {
+    "id": "wyze-cam-v4",
+    "image": "/images/cameras/cam001.png",
+    "name": "Wyze Cam v4",
+    "description": "The clearest Wyze Cam ever made.",
+    "price": 27.98,
+    "discount": "22%",
+    "initialVariant": "white",
+    "variants": [
+      { "id": "white", "label": "white", "image": "/images/cameras/varient001Cam001.png" },
+      { "id": "grey", "label": "grey", "image": "/images/cameras/varient002cam001.png" },
+      { "id": "black", "label": "black", "image": "/images/cameras/varient003cam001.png" }
+    ]
+  },
+  {
+    "id": "wyze-cam-pan-v3",
+    "image": "/images/cameras/cam002.png",
+    "name": "Wyze Cam Pan v3",
+    "description": "360آ° pan and 180آ° tilt security camera.",
+    "price": 39.98,
+    "discount": "12%",
+    "variants": [
+      { "id": "white", "label": "white", "image": "/images/cameras/varient001cam002.png" },
+      { "id": "black", "label": "black", "image": "/images/cameras/varient003cam002.png" }
+    ]
+  },
+  {
+    "id": "wyze-cam-floodlight-v2",
+    "image": "/images/cameras/cam003.png",
+    "name": "Wyze Cam Floodlight v2",
+    "description": "2K floodlight camera with a 160آ° wide-angle view for your garage.",
+    "price": 89.98,
+    "discount": "22%",
+    "variants": [
+      { "id": "white", "label": "white", "image": "/images/cameras/varient001cam003.png" },
+      { "id": "black", "label": "black", "image": "/images/cameras/varient003cam003.png" }
+    ]
+  },
+  {
+    "id": "wyze-duo-cam-doorbell",
+    "image": "/images/cameras/cam004.png",
+    "name": "Wyze Duo Cam Doorbell",
+    "description": "Two cameras. Two views. Double the porch protection.",
+    "price": 69.98
+  },
+  {
+    "id": "wyze-battery-cam-pro",
+    "image": "/images/cameras/cam005.png",
+    "name": "Wyze Battery Cam Pro",
+    "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.",
+    "price": 89.98,
+    "variants": [
+      { "id": "white", "label": "white", "image": "/images/cameras/varient001cam005.png" },
+      { "id": "black", "label": "black", "image": "/images/cameras/varient003cam005.png" }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "cam-unlimited",
+    "image": "/images/plans/plan001.svg",
+    "name": "Cam Unlimited",
+    "description": "Cloud protection for every camera.",
+    "price": 9.99,
+    "discount": "12%"
+  }
+]
