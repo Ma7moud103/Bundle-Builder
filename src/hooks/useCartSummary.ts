@@ -1,10 +1,10 @@
 import { useCallback, useMemo } from 'react';
 import { useBundle } from '@/contexts/BundleContext';
 import { STORAGE_KEY } from '@/util/constants';
-import type { CartSectionViewModel } from '../features/bundle-builder/components/Cart/types';
 import { groupReviewItems } from '../util/groupReviewItems';
 import { calculateCompareAtTotal } from '../util/bundle';
 import { calculateSavings } from '../util/calculateSavings';
+import type { CartSectionViewModel } from '@/interfaces/Cart';
 
 export function useCartSummary() {
   const { bundle, decrement, increment, reviewItems, totalPrice } = useBundle();

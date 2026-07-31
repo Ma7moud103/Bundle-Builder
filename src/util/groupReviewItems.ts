@@ -1,6 +1,6 @@
 import { REVIEW_CATEGORY_LABELS, REVIEW_CATEGORY_ORDER } from './bundle';
 import type { ReviewItem } from '../interfaces/products';
-import type { CartSectionData } from '../features/bundle-builder/components/Cart/types';
+import type { CartSectionData } from '@/interfaces/Cart';
 
 export function groupReviewItems(reviewItems: ReviewItem[]): CartSectionData[] {
   return REVIEW_CATEGORY_ORDER.map((category) => ({

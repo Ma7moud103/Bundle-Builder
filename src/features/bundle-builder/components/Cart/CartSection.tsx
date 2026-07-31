@@ -1,5 +1,5 @@
+import type { CartSectionViewModel } from '@/interfaces/Cart';
 import { CartItem } from './CartItem';
-import type { CartSectionViewModel } from './types';
 
 export function CartSection({ items, label }: CartSectionViewModel) {
   return (

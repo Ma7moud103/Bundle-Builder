@@ -1,4 +1,4 @@
-import type { CartSummaryProps } from './types';
+import type { CartSummaryProps } from '@/interfaces/Cart';
 import iconSatsification from '/images/satsification.png';
 
 export function CartSummary({ compareAtTotal, savings, totalPrice }: CartSummaryProps) {

@@ -1,5 +1,5 @@
 import { QuantityStepper } from '@/components/ui/QuantityStepper';
-import type { CartItemProps } from './types';
+import type { CartItemProps } from '@/interfaces/Cart';
 
 export function CartItem({
   compareAtPrice,
@@ -43,7 +43,7 @@ export function CartItem({
         </div>
       </div>
 
-      <div className=" flex flex-col items-end whitespace-nowrap text-sm leading-[18px]">
+      <div className=" flex flex-col items-end whitespace-nowrap text-sm leading-4.5">
         {compareAtPrice && compareAtPrice > price ? (
           <del className="text-discount-text">${compareAtPrice.toFixed(2)}</del>
         ) : null}
