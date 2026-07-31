@@ -1,7 +1,7 @@
 import type { CartSummaryProps } from '@/interfaces/Cart';
 import iconSatsification from '/images/satsification.png';
 
-export function CartSummary({ compareAtTotal, savings, totalPrice }: CartSummaryProps) {
+export function CartSummary({ compareAtTotal, totalPrice }: CartSummaryProps) {
   return (
     <div className="flex flex-col gap-3 py-4">
       <div className="flex items-center justify-between">
@@ -20,11 +20,11 @@ export function CartSummary({ compareAtTotal, savings, totalPrice }: CartSummary
           </div>
         </div>
       </div>
-      {savings > 0 ? (
+      {/* {savings > 0 ? (
         <div className="text-center text-[11px] text-checkout-des-green mb-1">
           Congrats! You&apos;re saving ${savings.toFixed(2)} on your security bundle!
         </div>
-      ) : null}
+      ) : null} */}
     </div>
   );
 }

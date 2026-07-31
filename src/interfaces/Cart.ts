@@ -33,7 +33,6 @@ export interface CartSectionViewModel {
 export interface CartSummaryProps {
   compareAtTotal: number;
   totalPrice: number;
-  savings: number;
 }
 
 export interface CartActionsProps {

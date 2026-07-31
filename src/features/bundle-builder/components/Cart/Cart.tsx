@@ -20,7 +20,7 @@ export default function Cart() {
       ))}
 
       <CartShipping />
-      <CartSummary savings={savings} compareAtTotal={compareAtTotal} totalPrice={totalPrice} />
+      <CartSummary compareAtTotal={compareAtTotal} totalPrice={totalPrice} />
       <CartActions onCheckout={handleCheckout} savings={savings} onSave={handleSaveBundle} />
     </section>
   );
