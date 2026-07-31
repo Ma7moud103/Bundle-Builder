@@ -13,15 +13,14 @@ export function ProductVariantSelector({ productId, variants, value, onChange }:
   }
 
   return (
-    <fieldset className="flex flex-wrap gap-2 pt-1" aria-label="Product variants">
-      <legend className="sr-only">Product variants</legend>
+    <fieldset className="flex flex-nowrap gap-2 pt-1 " aria-label="Product variants">
       {variants.map((variant) => {
         const isActive = value === variant.id;
         return (
           <label
             key={variant.id}
             htmlFor={`${productId}-${variant.id}`}
-            className={`flex cursor-pointer items-center justify-center gap-1 rounded border px-2 py-1 text-xs transition-colors focus-within:ring-2 focus-within:ring-[#00a88d] focus-within:ring-offset-1 ${
+            className={` cursor-pointer flex items-center rounded-xs border px-1.25 py-px text-xs transition-colors focus-within:ring-2 focus-within:ring-[#00a88d] focus-within:ring-offset-1 ${
               isActive ? 'border-[#00a88d]' : 'border-[#d9dee4]'
             }`}
           >

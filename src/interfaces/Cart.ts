@@ -38,5 +38,5 @@ export interface CartSummaryProps {
 export interface CartActionsProps {
   onCheckout: () => void;
   onSave: () => void;
-  savings: number;
+  savingAmount: number;
 }

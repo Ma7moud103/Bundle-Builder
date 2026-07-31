@@ -7,7 +7,8 @@ import { CartShipping } from './CartShipping';
 import { CartSummary } from './CartSummary';
 
 export default function Cart() {
-  const { compareAtTotal, groupedSections, handleCheckout, handleSaveBundle, savings, totalPrice } = useCartSummary();
+  const { compareAtTotal, groupedSections, handleCheckout, handleSaveBundle, savingAmount, totalPrice } =
+    useCartSummary();
 
   return (
     <section className="flex flex-col gap-1.25 bg-purple-secondary px-5 pb-7.5 pt-[15px] md:rounded-lg lg:self-start">
@@ -21,7 +22,7 @@ export default function Cart() {
 
       <CartShipping />
       <CartSummary compareAtTotal={compareAtTotal} totalPrice={totalPrice} />
-      <CartActions onCheckout={handleCheckout} savings={savings} onSave={handleSaveBundle} />
+      <CartActions onCheckout={handleCheckout} savingAmount={savingAmount} onSave={handleSaveBundle} />
     </section>
   );
 }

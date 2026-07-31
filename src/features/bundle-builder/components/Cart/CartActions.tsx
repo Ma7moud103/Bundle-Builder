@@ -1,11 +1,11 @@
 import type { CartActionsProps } from '@/interfaces/Cart';
 
-export function CartActions({ onCheckout, onSave, savings }: CartActionsProps) {
+export function CartActions({ onCheckout, onSave, savingAmount }: CartActionsProps) {
   return (
     <>
-      {savings > 0 ? (
+      {savingAmount > 0 ? (
         <div className="text-center text-[11px] text-checkout-des-green ">
-          Congrats! You&apos;re saving ${savings.toFixed(2)} on your security bundle!
+          Congrats! You&apos;re saving ${savingAmount.toFixed(2)} on your security bundle!
         </div>
       ) : null}
       <button

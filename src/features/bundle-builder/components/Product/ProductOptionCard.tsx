@@ -23,7 +23,7 @@ export function ProductOptionCard({
 }: IProductOptionCard) {
   return (
     <div
-      className={`relative grid grid-cols-[7rem_minmax(0,1fr)] gap-4 rounded-[10px] bg-white p-2.75  lg:min-h-37 ${
+      className={`relative grid grid-cols-[6.25rem_minmax(7rem,1fr)]  max-h-39.75 gap-4.75 rounded-[10px] bg-white p-2.75  ${
         isSelected && 'border-2 border-[#8066ec]'
       }
         sm:odd:last:col-span-2
@@ -41,7 +41,7 @@ export function ProductOptionCard({
 
       <ProductImage src={imageSrc} alt={name} />
 
-      <div className="">
+      <div>
         <ProductInfo name={name} description={description} />
 
         {variants.length > 0 ? (

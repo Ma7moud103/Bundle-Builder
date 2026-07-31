@@ -29,7 +29,7 @@ export function useCartSummary() {
   }, [decrement, increment, reviewItems]);
 
   const compareAtTotal = useMemo(() => calculateCompareAtTotal(reviewItems), [reviewItems]);
-  const savings = useMemo(() => calculateSavings(compareAtTotal, totalPrice), [compareAtTotal, totalPrice]);
+  const savingAmount = useMemo(() => calculateSavings(compareAtTotal, totalPrice), [compareAtTotal, totalPrice]);
 
   const handleSaveBundle = useCallback(() => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(bundle));
@@ -44,7 +44,7 @@ export function useCartSummary() {
     groupedSections,
     handleCheckout,
     handleSaveBundle,
-    savings,
+    savingAmount,
     totalPrice,
   };
 }

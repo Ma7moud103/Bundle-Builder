@@ -5,25 +5,26 @@ import { productLookup } from '@/data/catalog';
 import { getDefaultVariantId } from '@/util/selection';
 
 type LegacySelectedVariant = string | { id: string; image?: string };
-type LegacySelectedProduct = {
+
+interface ISelectedProduct {
   activeVariant?: LegacySelectedVariant;
   activeVariantId?: string;
   quantities: Record<string, number>;
-};
+}
 
-function getLegacyActiveVariantId(productId: string, item: LegacySelectedProduct) {
-  if (item.activeVariantId) {
-    return item.activeVariantId;
+function getActiveVariant(productId: string, selectedProduct: ISelectedProduct) {
+  if (selectedProduct.activeVariantId) {
+    return selectedProduct.activeVariantId;
   }
 
-  const legacyActiveVariant = item.activeVariant;
+  const ActiveVariant = selectedProduct.activeVariant;
 
-  if (typeof legacyActiveVariant === 'string') {
-    return legacyActiveVariant;
+  if (typeof ActiveVariant === 'string') {
+    return ActiveVariant;
   }
 
-  if (legacyActiveVariant && typeof legacyActiveVariant === 'object') {
-    return legacyActiveVariant.id;
+  if (ActiveVariant && typeof ActiveVariant === 'object') {
+    return ActiveVariant.id;
   }
 
   const product = productLookup.get(productId);
@@ -32,13 +33,13 @@ function getLegacyActiveVariantId(productId: string, item: LegacySelectedProduct
     return getDefaultVariantId(product);
   }
 
-  return Object.entries(item.quantities).find(([, quantity]) => quantity > 0)?.[0] ?? 'default';
+  return Object.entries(selectedProduct.quantities).find(([, quantity]) => quantity > 0)?.[0] ?? 'default';
 }
 
-function normalizeBundleState(bundle: Record<string, LegacySelectedProduct>): BundleState {
+function normalizeBundleState(bundle: Record<string, ISelectedProduct>): BundleState {
   return Object.entries(bundle).reduce<BundleState>((accumulator, [productId, item]) => {
     accumulator[productId] = {
-      activeVariantId: getLegacyActiveVariantId(productId, item),
+      activeVariantId: getActiveVariant(productId, item),
       quantities: item.quantities,
     };
 
@@ -58,7 +59,7 @@ export function getBundleFromStorage(): BundleState {
       return {};
     }
 
-    return normalizeBundleState(JSON.parse(stored) as Record<string, LegacySelectedProduct>);
+    return normalizeBundleState(JSON.parse(stored) as Record<string, ISelectedProduct>);
   } catch {
     return {};
   }
@@ -70,6 +71,9 @@ export function useBundleStorage(bundle: BundleState) {
       return;
     }
 
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(normalizeBundleState(bundle as Record<string, LegacySelectedProduct>)));
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(normalizeBundleState(bundle as Record<string, ISelectedProduct>)),
+    );
   }, [bundle]);
 }
