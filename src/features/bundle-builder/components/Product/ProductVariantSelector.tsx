@@ -33,7 +33,7 @@ export function ProductVariantSelector({ productId, variants, value, onChange }:
               className="sr-only"
             />
             <img className="h-6 w-6.25" src={variant.image ?? ''} alt="" aria-hidden="true" />
-            <span>{variant.label}</span>
+            <span className="capitalize text-black-1F-headerAndBorder">{variant.label}</span>
           </label>
         );
       })}
