@@ -6,8 +6,8 @@ interface ProductPriceProps {
 export function ProductPrice({ price, compareAtPrice }: ProductPriceProps) {
   return (
     <div className="flex flex-col items-end text-xs leading-4">
-      {compareAtPrice ? <del className="text-[#D8392B]">${compareAtPrice.toFixed(2)}</del> : null}
-      <span className="text-[#484848]">${price.toFixed(2)}</span>
+      {compareAtPrice ? <del className="text-price-red">${compareAtPrice.toFixed(2)}</del> : null}
+      <span className="text-gray-48-sub-header">${price.toFixed(2)}</span>
     </div>
   );
 }

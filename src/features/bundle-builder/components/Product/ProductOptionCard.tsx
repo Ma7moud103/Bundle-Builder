@@ -22,11 +22,10 @@ export function ProductOptionCard({
   onDecrement,
 }: IProductOptionCard) {
   return (
-    <article
+    <div
       className={`relative grid grid-cols-[7rem_minmax(0,1fr)] gap-4 rounded-[10px] bg-white p-2.75  lg:min-h-37 ${
         isSelected && 'border-2 border-[#8066ec]'
       }
-      
         sm:odd:last:col-span-2
         sm:odd:last:justify-self-center
         sm:odd:last:w-full
@@ -59,6 +58,6 @@ export function ProductOptionCard({
           <ProductPrice price={price} compareAtPrice={compareAtPrice} />
         </div>
       </div>
-    </article>
+    </div>
   );
 }

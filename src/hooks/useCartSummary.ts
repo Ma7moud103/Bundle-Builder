@@ -3,8 +3,12 @@ import { useBundle } from '@/contexts/BundleContext';
 import { STORAGE_KEY } from '@/util/constants';
 import { groupReviewItems } from '../util/groupReviewItems';
 import { calculateCompareAtTotal } from '../util/bundle';
-import { calculateSavings } from '../util/calculateSavings';
+
 import type { CartSectionViewModel } from '@/interfaces/Cart';
+
+function calculateSavings(compareAtTotal: number, totalPrice: number) {
+  return Math.max(0, Math.round((compareAtTotal - totalPrice + Number.EPSILON) * 100) / 100);
+}
 
 export function useCartSummary() {
   const { bundle, decrement, increment, reviewItems, totalPrice } = useBundle();

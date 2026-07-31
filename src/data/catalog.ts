@@ -34,10 +34,10 @@ export const productCatalog: CatalogProduct[] = [
 
 export const productLookup = new Map(productCatalog.map((product) => [product.id, product] as const));
 
-// const FALLBACK_IMAGE = '/images/icons/image-placeholder.svg';
+const FALLBACK_IMAGE = '/images/icons/image-placeholder.svg';
 
 export function resolveVariantImage(product: Pick<IProduct, 'image' | 'variants'>, variantId?: string) {
   const variant = product.variants?.find((variant) => variant.id === variantId);
 
-  return variant?.image ? product.image : '';
+  return variant?.image ? product.image : FALLBACK_IMAGE;
 }
